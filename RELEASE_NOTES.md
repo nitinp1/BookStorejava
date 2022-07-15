@@ -1,4 +1,4 @@
-# WebGoat release notes 
+# WebGoat release notes..
 
 ## Unreleased
 
