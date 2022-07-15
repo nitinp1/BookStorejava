@@ -23,7 +23,7 @@
 package org.owasp.webgoat.xxe;
 
 import org.apache.commons.exec.OS;
-import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.owasp.webgoat.assignments.AssignmentEndpoint;
 import org.owasp.webgoat.assignments.AssignmentHints;
 import org.owasp.webgoat.assignments.AttackResult;
@@ -57,7 +57,7 @@ public class SimpleXXE extends AssignmentEndpoint {
     @Value("${webgoat.server.directory}")
     private String webGoatHomeDirectory;
 
-    @Value("${webwolf.url.landingpage}")
+    @Value("${webwolf.landingpage.url}")
     private String webWolfURL;
 
 
@@ -80,7 +80,7 @@ public class SimpleXXE extends AssignmentEndpoint {
                 return success(this).build();
             }
         } catch (Exception e) {
-            error = ExceptionUtils.getFullStackTrace(e);
+            error = ExceptionUtils.getStackTrace(e);
         }
         return failed(this).output(error).build();
     }
